@@ -1,0 +1,81 @@
+body {
+    padding-bottom: 20px;
+}
+
+.navbar{
+    margin-bottom: 20px;
+}
+
+#navigationbar{
+    display: inline;
+}
+
+.quote{
+    border-style: inset;
+    border-radius: 1.25rem !important;
+    border-color: aliceblue;
+    margin-top: 30px;
+}
+
+#main-image{
+    width: 100%;
+    height: 100%;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    padding-top: 8%;
+    margin: auto;
+}
+
+.text-center{
+    align-items: center;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#sign{
+    color: aliceblue;
+}
+
+.img-card{
+    padding: 20%;
+}
+
+.navbar-fixed-top{
+    overflow: hidden;
+    position: fixed; /*set navbar to the fixed position */
+    top: 0; /* position the navbar right at the top of the page*/
+    width: 100%;
+}
+
+.mt-mine{
+    margin-top: 50pt !important; /* margin to avoid content overlay with fixed navbar */
+}
+
+.table-column{
+    column-gap: 30%;
+}

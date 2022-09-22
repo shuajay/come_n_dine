@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form class="mt-mine text-white" method="POST" action="/addBook">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert-primary text-center">
+            {{ messages[0]}}. <br> Go to <a class="alert-link" href="{{ url_for('main.availableBooks') }}">Available Books</a>to view new book.
+        </div>
+    {% endif %}
+    {% endwith %}
+    <div class="h3 mb-3 text-center fst-italic fw-normal">
+        <h1>ADD NEW BOOK</h1>
+    </div>
+    <div>
+        <label class="col-form-label-lg">Book Title</label>
+        <input class="form-control-lg w-100" type="text" name="book_title" placeholder="Enter title of book">
+    </div>
+
+    <div>
+        <label class="col-form-label-lg">Tape Number</label>
+        <input class="form-control-lg w-100" type="text" name="tape_number" placeholder="Enter Tape Number">
+    </div>
+
+    <div>
+        <label class="col-form-label-lg">Book ID</label>
+        <input class="form-control-lg w-100" type="text" name="book_id" placeholder="Enter Book ID">
+    </div>
+
+    <div>
+        <label class="col-form-label-lg">Shelf Number</label>
+        <input class="form-control-lg w-100" type="text" name="shelf_number" placeholder="Enter Shelf Number">
+    </div>
+
+    <div>
+        <button class="mt-5 w-100 btn btn-lg btn-success" type="submit" >Submit</button>
+    </div>
+    
+</form>
+{% endblock %}

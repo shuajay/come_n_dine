@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>COME 'N' DINE</title>
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-dark">
+    <nav class="navbar navbar-expand navbar-dark bg-success navbar-fixed-top" aria-label="Navigation bar">
+        
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Come 'N' Dine</a>
+
+            <div class="collapse" id="navigationbar">
+                <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.home') }}"> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.availableBooks') }}">Available Books</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.borrowedBooks') }}">Borrowed Books</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.borrowBooks') }}">Borrow Book</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.addBook') }}">Add Book</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('auth.addUser')}}">Add User</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('auth.logout')}}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

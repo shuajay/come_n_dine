@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="form-signin text-center">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert-danger">
+                {{ messages[0] }}. Go to <a class="alert-link" href="{{ url_for('auth.login') }} ">Login Page</a>
+            </div>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="/addUser">
+            <img class="mb-4" src="{{ url_for('static', filename='images/supernatural2.jfif') }}" alt="" width="100">
+            <h1 class="h3 mb-3 fst-italic fw-normal text-white">Add new user</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" name="name" placeholder="Enter Username">
+                <label for="floatingInput">Username</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" name="email" placeholder="Enter email address">
+                <label for="floatingInput">Email Address</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                <label for="floatinPassword">Password</label>
+            </div>
+            
+            <!-- <div class="mb-3 text-start">
+                <label class="text-white"><input type="radio" name="account" value="admin"> Administrator</label>
+                <label class="text-white ms-5"><input type="radio" name="account" value="user"> User</label>
+            </div> -->
+
+            <button class="w-100 btn btn-lg btn-success" type="submit">Add User</button>
+
+            <p class="mt-5 mb-3 text-white-50">&copy; 2022 <br>ShuaJay </p>
+        </form>
+    </main>
+
+{% endblock %}

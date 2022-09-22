@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="p-4 p-md-5 mb-4 mt-mine text-white quote">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/11.jpg') }}" alt="William Branham" id="main-image">
+        </div>
+        <div class="col-md-8">
+            <h1 class="display-4 fst-italic">63-0728 CHRIST IS THE MYSTERY OF GOD REVEALED</h1>
+            <p class="lead my-3"><sup>5</sup><strong>...But You said, Store up this Food here for the time." Lord, reverently I've tried to do that.</strong></p>
+            <p class="lead my-3"><sup>6</sup><strong> Grant it, Lord that the people might feed thereon and grow fat,</strong> as it was, in the grace of God, that they would see that it's God's great mercy to us in this day.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-2">
+    <div class="col-md-6 text-white">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">Revelation 10:7</h3>
+                <p class="card-text mb-auto">But in the days of the seventh angel, when he shall begin to sound, the mystery of God should be finished, as he hath declared to his servants the prophets.</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img class="img-card" width="200" height="200" src="{{ url_for('static', filename='images/Christ.jpg') }}" alt="Jesus Christ">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 text-white">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-0">Revelation 10:9</h3>
+                <p class="card-text mb-auto">And I went unto the angel and said unto him, Give me the book. And he said unto me, Take it, and eat it up; and it shall make thy belly bitter, but it shall be in thy mouth sweet as honey.</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img class="img-card" width="200" height="200" src="{{ url_for('static', filename='images/12.jpg') }}" alt="William Branham">
+            </div>
+        </div>
+    </div>
+    <p class="mt-5 mb-3 text-white-50 text-center">&copy; 2022 <br>ShuaJay </p>
+</div>
+
+
+
+{% endblock %}

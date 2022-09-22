@@ -1,0 +1,38 @@
+<!-- call base.html for navigation menu -->
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- set the margin top parameters using the mt-mine (custom measurements) -->
+<div class="mt-mine">
+    <!-- create a table that will diisplay the details of the borrowed books -->
+    <table class="table table-dark table-striped">
+        <h3 class="text-white">Borrower Details</h3>
+        <!-- set the headings for the columns that will be retrieved from the database in the borrower table -->
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Physical Address</th>
+            <th>Book Title</th>
+            <th>Tape Number</th>
+            <th>Book ID</th>
+            <th>Date of Issue</th>
+            <th colspan="2" class="text-center">Action</th>
+        </tr>
+        <!-- for each borrower detail that is found in the borrowers table -->
+        <!-- the borrowers corresponds to the Borrower.query.all in the main.py -->
+        {% for borrower in borrowerList %}
+        <tr>
+            <td>{{ borrower.name }}</td>
+            <td>{{ borrower.phone_number }}</td>
+            <td>{{ borrower.address }}</td>
+            <td>{{ borrower.book_title }}</td>
+            <td>{{ borrower.tape_number}}</td>
+            <td>{{ borrower.books}}</td>
+            <td>{{ borrower.date_of_issue }}</td>
+            <td><button type="button" class="btn-success btn-sm">Edit</button></td>
+            <td><button type="button" class="btn-danger btn-sm">Delete</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
