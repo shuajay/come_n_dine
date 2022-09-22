@@ -99,3 +99,11 @@ def addBook_post():
     # display the message if the book has been successfully added
     flash('Book successfully added')
     return redirect(url_for('main.addBook'))
+
+@main.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html')
+
+@main.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html')
