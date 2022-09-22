@@ -1,17 +1,23 @@
 #app setup
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, current_user
 
 #init the database
 db = SQLAlchemy()
 
+
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+def internal_server_error(e):
+    return render_template('500.html'), 500
+
 def create_app():
     app = Flask(__name__)
 
-    app.config['SECRET_KEY'] = 'shuajayshujay'
+    # app.config['SECRET_KEY'] = 'shuajayshujay'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///librarymanagement.sqlite'
-    #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://mciuzicxnqimtn:303c9810cbf0202712d0caecd5cc7ffb8777caa0aeea51b99fc924748f64d4be@ec2-35-170-146-54.compute-1.amazonaws.com:5432/d98v5s7g749l96'
     
 
     db.init_app(app)
@@ -35,5 +41,9 @@ def create_app():
     #blueprint for non auth operations
     from main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+
+    #error handlers
+    app.register_error_handler(404, page_not_found)
+    app.register_error_handler(500, internal_server_error)
 
     return app
