@@ -59,6 +59,11 @@ def availableBooks():
     bookList = Books.query.all()
     return render_template('available.html', bookList=bookList)
 
+@main.route('/storehouse')
+def storehouse():
+    allbooks = Books.query.all()
+    return render_template('storehouse.html', allbooks=allbooks)
+
 #route for currently borrowed books
 @main.route('/borrowedBooks')
 def borrowedBooks():

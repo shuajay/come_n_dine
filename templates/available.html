@@ -10,16 +10,23 @@
             <th>Tape Number</th>
             <th>Book ID</th>
             <th>Shelf Number</th>
-            <th>Borrower</th>
         </tr>
         {% for book in bookList %}
-        <tr>
-            <td>{{ book.book_title }}</td>
-            <td>{{ book.tape_number }}</td>
-            <td>{{ book.book_id }}</td>
-            <td>{{ book.shelf_number }}</td>
-            <td>{{ book.borrowers }}</td>
-        </tr>
+            {% if book.borrowers %}
+            <tr>
+                <td>{{ book.book_title }}</td>
+                <td>{{ book.tape_number }}</td>
+                <td>{{ book.book_id }}</td>
+                <td>{{ book.shelf_number }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td>{{ book.book_title }}</td>
+                <td>{{ book.tape_number }}</td>
+                <td>{{ book.book_id }}</td>
+                <td>{{ book.shelf_number }}</td>
+            </tr>
+            {% endif %}
         {% endfor %}
     </table>
 </div>
