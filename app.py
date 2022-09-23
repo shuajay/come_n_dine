@@ -7,6 +7,7 @@ from flask_login import LoginManager, current_user
 db = SQLAlchemy()
 
 
+
 def page_not_found(e):
     return render_template('404.html'), 404
 
@@ -16,10 +17,9 @@ def internal_server_error(e):
 def create_app():
     app = Flask(__name__)
 
-    # app.config['SECRET_KEY'] = 'shuajayshujay'
+    app.config['SECRET_KEY'] = 'shuajayshujay'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///librarymanagement.sqlite'
     
-
     db.init_app(app)
 
     login_manager = LoginManager()
