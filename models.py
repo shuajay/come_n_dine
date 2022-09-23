@@ -43,4 +43,4 @@ class Borrower(UserMixin, db.Model):
     #date of issue column
     date_of_issue = db.Column(db.Text, nullable=False)
     #foreign key from the books table
-    book_id = db.Column(db.String, db.ForeignKey('books.book_id'))
+    book_id = db.Column(db.Integer, db.ForeignKey('books.book_id'))
