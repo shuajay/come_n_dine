@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="mt-mine">
+    <table class="table table-dark table-striped">
+        <h3 class="text-white">All Books</h3>
+        <tr>
+            <th>Title</th>
+            <th>Tape Number</th>
+            <th>Book ID</th>
+            <th>Shelf Number</th>
+            <th>Status</th>
+        </tr>
+        {% for book in allbooks %}
+            {% if book.borrowers %}
+            <tr>
+                <td>{{ book.book_title }}</td>
+                <td>{{ book.tape_number }}</td>
+                <td>{{ book.book_id }}</td>
+                <td>{{ book.shelf_number }}</td>
+                <td>Currently Borrowed</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td>{{ book.book_title }}</td>
+                <td>{{ book.tape_number }}</td>
+                <td>{{ book.book_id }}</td>
+                <td>{{ book.shelf_number }}</td>
+                <td>Available</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
