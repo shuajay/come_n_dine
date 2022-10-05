@@ -6,8 +6,17 @@
 <div class="mt-mine">
     <!-- create a table that will diisplay the details of the borrowed books -->
     <table class="table table-dark table-striped">
-        <h3 class="text-white">Borrower Details</h3>
+        <h1 class="text-white text-center mb-3 fst-italic fw-normal">Borrower Details</h1>
         <!-- set the headings for the columns that will be retrieved from the database in the borrower table -->
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert-success text-center">
+                {{ messages[0] }}.
+            </div>
+        {% endif %}
+        {% endwith %}
+
         <tr>
             <th>Name</th>
             <th>Phone Number</th>
@@ -30,7 +39,7 @@
             <td>{{ borrower.books}}</td>
             <td>{{ borrower.date_of_issue }}</td>
             <td><button type="button" class="btn-success btn-sm">Edit</button></td>
-            <td><button type="button" class="btn-danger btn-sm">Delete</button></td>
+            <td><button type="button" class="btn-danger btn-sm"><a href="{{ url_for('main.deleteBorrower', id=id) }} ">Delete</a></button></td>
         </tr>
         {% endfor %}
     </table>

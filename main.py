@@ -59,6 +59,7 @@ def availableBooks():
     bookList = Books.query.all()
     return render_template('available.html', bookList=bookList)
 
+#route to see all the books that are in the system whether borrowed or not
 @main.route('/storehouse')
 def storehouse():
     allbooks = Books.query.all()
@@ -71,6 +72,54 @@ def borrowedBooks():
     borrowerList = Borrower.query.all()
     return render_template('borrowed.html', borrowerList=borrowerList)
 
+# edit details of the borrower
+# @main.route('/borrowedBooks/edit/<int:id>', methods=['GET', 'POST'])
+# def edit_borrower(id):
+#     #query details of borrowers and books borrowed
+#     borrowerList = Borrower.query.all()
+#     name = request.form.get('name')
+#     phone_number = request.form.get('phone_number')
+#     address = request.form.get('address')
+#     book_id = request.form.get('book_id')
+#     book_title = request.form.get('book_title')
+#     tape_number = request.form.get('tape_number')
+#     date_of_issue = request.form.get('date_of_issue')
+
+#     form.name.data = borrowerList.name
+#     form.phone_number.data = borrowerList.phone_number
+#     form.address.data = borrowerList.address
+#     form.book_id.data = borrowerList.book_id
+#     form.book_title.data = borrowerList.book_title
+#     form.tape_number.data = borrowerList.tape_number
+#     form.date_of_issue.data = borrowerList.date_of_issue
+
+#     borrowerList.name = form.name.data
+#     borrowerList.phone_number = form.phone_number.data
+#     borrowerList.address = form.address.data
+#     borrowerList.book_id = form.book_id.data
+#     borrowerList.book_title = form.book_title.data
+#     borrowerList.tape_number = form.tape_number.data
+#     borrowerList.date_of_issue = form.date_of_issue.data
+
+#     db.session.add(borrowerList)
+#     db.session.commit()
+#     flash("Borrower details have been updated")
+#     return redirect(url_for('main.borrowBooks', id=borrowBooks.id))
+
+#route for deleting
+@main.route('/deleteBorrower')
+def deleteBorrower():
+    id = Borrower.id
+    user_to_delete = Borrower.query.filter_by(id=id).first()
+    try:
+        db.session.delete(user_to_delete)
+        db.session.commit()
+        flash("Borrower deleted successfully!!")
+        borrowerList = Borrower.query.all()
+        return render_template('borrowed.html', borrowerList=borrowerList, id=id)
+    except:
+        flash("Problem deleting Borrower details, Please try again!!")
+        return render_template('borrowed.html', borrowerList=borrowerList, id=id)
 #route for adding a new book
 @main.route('/addBook')
 def addBook():

@@ -4,7 +4,7 @@
 
 <div class="mt-mine">
     <table class="table table-dark table-striped">
-        <h3 class="text-white">Available Books</h3>
+        <h1 class="text-white text-center mb-3 fst-italic fw-normal">Available Books</h1>
         <tr>
             <th>Title</th>
             <th>Tape Number</th>
@@ -13,12 +13,6 @@
         </tr>
         {% for book in bookList %}
             {% if book.borrowers %}
-            <tr>
-                <td>{{ book.book_title }}</td>
-                <td>{{ book.tape_number }}</td>
-                <td>{{ book.book_id }}</td>
-                <td>{{ book.shelf_number }}</td>
-            </tr>
             {% else %}
             <tr>
                 <td>{{ book.book_title }}</td>
