@@ -25,7 +25,7 @@
             <th>Tape Number</th>
             <th>Book ID</th>
             <th>Date of Issue</th>
-            <th colspan="2" class="text-center">Action</th>
+            <th>Action</th>
         </tr>
         <!-- for each borrower detail that is found in the borrowers table -->
         <!-- the borrowers corresponds to the Borrower.query.all in the main.py -->
@@ -38,7 +38,6 @@
             <td>{{ borrower.tape_number}}</td>
             <td>{{ borrower.books}}</td>
             <td>{{ borrower.date_of_issue }}</td>
-            <td><button type="button" class="btn-success btn-sm">Edit</button></td>
             <td><button type="button" class="btn-danger btn-sm"><a href="{{ url_for('main.deleteBorrower', id=id) }} ">Delete</a></button></td>
         </tr>
         {% endfor %}
