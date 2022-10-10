@@ -35,7 +35,7 @@ def borrow_post():
     #check for the borrower details
     borrower_details = Borrower.query.filter_by(book_id=book_id).first()
     
-    #if it returns a book making use of the uniques code then book already in database
+    #if it returns a book making use of the uniques code then book already in borrowed
     if borrower_details:
         flash('Book already borrowed')
         return redirect(url_for('main.borrowBooks'))
