@@ -72,7 +72,7 @@ def borrowedBooks():
     borrowerList = Borrower.query.all()
     return render_template('borrowed.html', borrowerList=borrowerList)
 
-#route for deleting
+#route for deleting borrower
 @main.route('/deleteBorrower')
 def deleteBorrower():
     id = Borrower.id
