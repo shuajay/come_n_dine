@@ -18,7 +18,7 @@ def create_app():
     app = Flask(__name__)
 
     app.config['SECRET_KEY'] = 'shuajayshujay'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://qglkftgvmsbymz:4785be4a75bd04b266f95eba14f1d662fe7c5a4f1ab5246d624cf7847c5b3e8c@ec2-3-213-66-35.compute-1.amazonaws.com:5432/d3n9cd42a7lq3j'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://xzwnfsuupfxxia:6338420b042e67911a2742b9c315863af0b76e802a367950453f4737f1186db7@ec2-3-220-207-90.compute-1.amazonaws.com:5432/d9q77saj268i47'
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///librarymanagement.sqlite'
     
     db.init_app(app)
