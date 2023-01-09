@@ -19,6 +19,8 @@ def create_app():
 
     app.config['SECRET_KEY'] = 'shuajayshujay'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://xzwnfsuupfxxia:6338420b042e67911a2742b9c315863af0b76e802a367950453f4737f1186db7@ec2-3-220-207-90.compute-1.amazonaws.com:5432/d9q77saj268i47'
+    
+    #dev database
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///librarymanagement.sqlite'
     
     db.init_app(app)
